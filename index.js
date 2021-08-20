@@ -22,15 +22,11 @@ const randomIntegerFromInterval = (min, max) => {
 let timerId = null;
 
 refs.startButtonRef.addEventListener("click", () => {
-  console.log("start");
-
   refs.startButtonRef.disabled = true;
 
   timerId = setInterval(() => {
-    console.log(
-      (refs.bodyRef.style.backgroundColor =
-        colors[randomIntegerFromInterval(0, colors.length - 1)])
-    );
+    refs.bodyRef.style.backgroundColor =
+      colors[randomIntegerFromInterval(0, colors.length - 1)];
   }, 1000);
 });
 
@@ -41,6 +37,4 @@ refs.stopButtonRef.addEventListener("click", () => {
 
   clearInterval(timerId);
   refs.startButtonRef.disabled = false;
-
-  console.log("stop");
 });
