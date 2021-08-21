@@ -24,8 +24,6 @@ let timerId = null;
 refs.startButtonRef.addEventListener("click", () => {
   refs.startButtonRef.setAttribute("disabled", "disabled");
 
-  console.dir(refs.startButtonRef);
-
   timerId = setInterval(() => {
     refs.bodyRef.style.backgroundColor =
       colors[randomIntegerFromInterval(0, colors.length - 1)];
