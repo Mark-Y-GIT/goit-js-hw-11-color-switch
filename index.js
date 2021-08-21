@@ -22,7 +22,9 @@ const randomIntegerFromInterval = (min, max) => {
 let timerId = null;
 
 refs.startButtonRef.addEventListener("click", () => {
-  refs.startButtonRef.disabled = true;
+  refs.startButtonRef.setAttribute("disabled", "disabled");
+
+  console.dir(refs.startButtonRef);
 
   timerId = setInterval(() => {
     refs.bodyRef.style.backgroundColor =
@@ -36,5 +38,5 @@ refs.stopButtonRef.addEventListener("click", () => {
   }
 
   clearInterval(timerId);
-  refs.startButtonRef.disabled = false;
+  refs.startButtonRef.removeAttribute("disabled");
 });
